@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "request.h"
 
-NSString *url = @"https://uselessfacts.jsph.pl/";
+NSString *url = @"http://uselessfacts.jsph.pl/";
 
 NSString *random_fact = nil;
 
@@ -16,7 +16,7 @@ void request_random_fact(){
     //create request object
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:url]];
-    [request setHTTPMethod:@"GET /random"];
+    [request setHTTPMethod:@"GET /random?language=en"];
     __block NSString *requestReply = nil;
     
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
